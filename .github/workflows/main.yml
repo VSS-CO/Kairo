@@ -10,25 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
-      # Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Install dependencies
       - name: Install dependencies
         run: npm install
 
-      # Optional: Build step (if you have one)
       - name: Build
         run: npm run build || echo "No build script"
 
-      # Commit and push changes
       - name: Commit & Push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
