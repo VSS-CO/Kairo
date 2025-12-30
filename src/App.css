@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1e1e1e;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.ide {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ---------- TOP MENU ---------- */
+.top-menu {
+  display: flex;
+  background-color: #1a1a1a;
+  color: #fff;
+  z-index: 100;
+  user-select: none;
+}
+
+.menu-item {
+  position: relative;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #333;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #2a2a2a;
+  min-width: 180px;
+  border: 1px solid #444;
+  flex-direction: column;
+  z-index: 200;
+}
+
+.menu-item:hover .dropdown {
+  display: flex;
+}
+
+.dropdown-item {
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #3a3a3a;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.main-container {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 36px);
+}
+
+/* ---------- LEFT SIDEBAR ---------- */
+.left-sidebar {
+  width: 50px;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em 0;
+}
+
+.left-sidebar i {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+  cursor: pointer;
+  color: #fff;
+}
+
+.left-sidebar i:hover {
+  color: #646cff;
+}
+
+/* ---------- FILE EXPLORER ---------- */
+.sidebar {
+  width: 200px;
+  background-color: #252526;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+
+.sidebar-actions {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.sidebar-actions i {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.sidebar-actions i:hover {
+  color: #646cff;
+}
+
+.file-tree {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.folder-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.2em 0;
+  color: #fff;
+}
+
+.folder-label i {
+  margin-right: 4px;
+}
+
+.folder-contents {
+  padding-left: 16px;
+}
+
+.file {
+  cursor: pointer;
+  padding: 0.2em 0;
+  color:#fff
+}
+
+.file:hover {
+  background-color: #333;
+}
+
+/* ---------- EDITOR ---------- */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  background-color: #1e1e1e;
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 0.3em 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-right: 1px;
+  color: #fff;
+}
+
+.tab.active {
+  background-color: #333;
+  font-weight: bold;
+}
+
+.tab .close {
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
+.editor-wrapper {
+  flex: 1;
+  min-height: 0;
+}
+
+.empty-editor {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+.console {
+  background-color: #1a1a1a;
+  color: #0f0;
+  padding: 0.5em;
+  font-family: monospace;
+  font-size: 0.85em;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+
